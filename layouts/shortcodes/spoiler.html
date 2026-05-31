@@ -1,0 +1,4 @@
+<details class="spoiler" style="border:1px solid var(--border); border-radius:8px; padding:.5rem 1rem; margin:1rem 0;">
+  <summary style="cursor:pointer; font-weight:600;">{{ .Get "summary" | default "Mostrar spoiler" }}</summary>
+  <div style="margin-top:.5rem;">{{ .Inner | markdownify }}</div>
+</details>

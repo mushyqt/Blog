@@ -1,0 +1,93 @@
+baseURL = "https://badsignal.com/"
+languageCode = "pt-pt"
+title = "O Meu Blog"
+theme = "PaperMod"
+
+enableRobotsTXT = true
+enableEmoji = true
+buildDrafts = false
+buildFuture = false
+buildExpired = false
+
+[pagination]
+  pagerSize = 10
+
+[minify]
+  disableXML = true
+  minifyOutput = true
+
+# --- Realce de código (Chroma) ---
+[markup]
+  [markup.highlight]
+    noClasses = false      # usa classes CSS (o PaperMod trata das cores e do dark/light)
+    codeFences = true
+    guessSyntax = true
+    lineNos = false        # mantém OFF para o botão "copiar" copiar só o código
+    tabWidth = 4
+  [markup.goldmark.renderer]
+    unsafe = true          # permite HTML embebido (giscus, iframes, asciinema, etc.)
+
+# Necessário para a pesquisa funcionar
+[outputs]
+  home = ["HTML", "RSS", "JSON"]
+
+[params]
+  env = "production"
+  defaultTheme = "dark"
+  ShowReadingTime = true
+  ShowWordCount = true
+  ShowCodeCopyButtons = true
+  ShowToc = true
+  TocOpen = false
+  ShowBreadCrumbs = true
+  ShowPostNavLinks = true
+  ShowShareButtons = false
+  disableThemeToggle = false
+
+  [params.homeInfoParams]
+    Title = "Olá 👋"
+    Content = "Notas, writeups de CTF e tropelias de security."
+
+  [[params.socialIcons]]
+    name = "github"
+    url = "https://github.com/teu-user"
+  [[params.socialIcons]]
+    name = "rss"
+    url = "index.xml"
+
+  # Opções da pesquisa (fuse.js)
+  [params.fuseOpts]
+    isCaseSensitive = false
+    shouldSort = true
+    location = 0
+    distance = 1000
+    threshold = 0.4
+    minMatchCharLength = 0
+    keys = ["title", "permalink", "summary", "content"]
+
+# --- Menu ---
+[menu]
+  [[menu.main]]
+    name = "Writeups"
+    url = "/writeups/"
+    weight = 10
+  [[menu.main]]
+    name = "Posts"
+    url = "/posts/"
+    weight = 20
+  [[menu.main]]
+    name = "Notes"
+    url = "/notes/"
+    weight = 30
+  [[menu.main]]
+    name = "About"
+    url = "/about/"
+    weight = 40
+  [[menu.main]]
+    name = "Search"
+    url = "/search/"
+    weight = 50
+  [[menu.main]]
+    name = "Tags"
+    url = "/tags/"
+    weight = 60
